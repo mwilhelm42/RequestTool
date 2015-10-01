@@ -61,6 +61,8 @@ public class RunnableRequestHandler extends RequestHandler implements Runnable{
     @Override
     public void run(){
         this.data = this.request();
-        this.changeState(RequestEvent.READY_TO_WRITE);   
+        if(this.data!=null){
+            this.changeState(RequestEvent.READY_TO_WRITE);
+        }
     }
 }
